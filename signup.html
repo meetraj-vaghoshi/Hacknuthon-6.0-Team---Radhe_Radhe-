@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+
+        body {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container-wrapper {
+            display: flex;
+            width: 800px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        .left-container {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .right-container {
+            width: 50%;
+            background: url('https://source.unsplash.com/500x500/?technology,login') no-repeat center;
+            background-size: cover;
+        }
+        .auth-container {
+            width: 100%;
+            text-align: center;
+        }
+        .auth-container h1 {
+            color: #333;
+            font-weight: bold;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+        .form-group label {
+            font-weight: bold;
+            color: #555;
+        }
+        .btn-custom {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+        .btn-primary {
+            background-color: #6a11cb;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #2575fc;
+        }
+        .nav-tabs .nav-link {
+            width: 100%;
+        }
+        
+/* bubble animation */
+.bubbles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+  
+  .bubble {
+    position: absolute;
+    bottom: -100px;
+    width: 40px;
+    height: 40px;
+    background:blue;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: rise 15s infinite ease-in;
+  }
+  
+  .bubble:nth-child(1) {
+    width: 40px;
+    height: 40px;
+    left: 10%;
+    animation-duration: 8s;
+  }
+  
+  .bubble:nth-child(2) {
+    width: 20px;
+    height: 20px;
+    left: 20%;
+    animation-duration: 5s;
+    animation-delay: 1s;
+  }
+  
+  .bubble:nth-child(3) {
+    width: 50px;
+    height: 50px;
+    left: 35%;
+    animation-duration: 7s;
+    animation-delay: 2s;
+  }
+  
+  .bubble:nth-child(4) {
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    animation-duration: 11s;
+    animation-delay: 0s;
+  }
+  
+  .bubble:nth-child(5) {
+    width: 35px;
+    height: 35px;
+    left: 55%;
+    animation-duration: 6s;
+    animation-delay: 1s;
+  }
+  
+  .bubble:nth-child(6) {
+    width: 45px;
+    height: 45px;
+    left: 65%;
+    animation-duration: 8s;
+    animation-delay: 3s;
+  }
+  
+  .bubble:nth-child(7) {
+    width: 25px;
+    height: 25px;
+    left: 75%;
+    animation-duration: 7s;
+    animation-delay: 2s;
+  }
+  
+  .bubble:nth-child(8) {
+    width: 80px;
+    height: 80px;
+    left: 80%;
+    animation-duration: 12s;
+    animation-delay: 2s;
+  }
+  
+  .bubble:nth-child(9) {
+    width: 15px;
+    height: 15px;
+    left: 70%;
+    animation-duration: 5s;
+    animation-delay: 1s;
+  }
+  
+  .bubble:nth-child(10) {
+    width: 50px;
+    height: 50px;
+    left: 85%;
+    animation-duration: 10s;
+    animation-delay: 4s;
+  }
+  
+  .bubble:nth-child(11) {
+    width: 40px;
+    height: 40px;
+    left: 5%;
+    animation-duration: 9s;
+    animation-delay: 2s;
+  }
+  
+  .bubble:nth-child(12) {
+    width: 30px;
+    height: 30px;
+    left: 15%;
+    animation-duration: 7s;
+    animation-delay: 3s;
+  }
+  
+  .bubble:nth-child(13) {
+    width: 60px;
+    height: 60px;
+    left: 30%;
+    animation-duration: 11s;
+    animation-delay: 1s;
+  }
+  
+  .bubble:nth-child(14) {
+    width: 25px;
+    height: 25px;
+    left: 40%;
+    animation-duration: 6s;
+    animation-delay: 2s;
+  }
+  
+  .bubble:nth-child(15) {
+    width: 45px;
+    height: 45px;
+    left: 60%;
+    animation-duration: 9s;
+    animation-delay: 0s;
+  }
+  
+  .bubble:nth-child(16) {
+    width: 35px;
+    height: 35px;
+    left: 25%;
+    animation-duration: 8s;
+    animation-delay: 3s;
+  }
+  
+  .bubble:nth-child(17) {
+    width: 55px;
+    height: 55px;
+    left: 45%;
+    animation-duration: 10s;
+    animation-delay: 2s;
+  }
+  
+  .bubble:nth-child(18) {
+    width: 70px;
+    height: 70px;
+    left: 90%;
+    animation-duration: 12s;
+    animation-delay: 1s;
+  }
+  
+  .bubble:nth-child(19) {
+    width: 25px;
+    height: 25px;
+    left: 95%;
+    animation-duration: 6s;
+    animation-delay: 0s;
+  }
+  
+  .bubble:nth-child(20) {
+    width: 40px;
+    height: 40px;
+    left: 3%;
+    animation-duration: 9s;
+    animation-delay: 4s;
+  }
+  
+  @keyframes rise {
+    0% {
+      bottom: -100px;
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(100px);
+    }
+    100% {
+      bottom: 1080px;
+      transform: translateX(-100px);
+    }
+  }
+    /* End of bubble animation */
+
+    </style>
+</head>
+<body>
+    <div class="container-wrapper">
+        <div class="left-container">
+            <div class="auth-container">
+                <ul class="nav nav-tabs" id="auth-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="signup-tab" data-bs-toggle="tab" href="#signup">Signup</a>
+                    </li>
+                </ul>
+                <div class="tab-content mt-3">
+                    <div class="bubbles">
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                        <div class="bubble"></div>
+                    </div>
+                    <div class="tab-pane fade show active" id="login">
+                        <h1>Login</h1>
+                        <form>
+
+                            <div class="form-group">
+                                <label for="login-username">Email</label>
+                                <input type="text" class="form-control" id="login-username" placeholder="Enter Email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="login-password">Password</label>
+                                <input type="password" class="form-control" id="login-password" placeholder="Enter Password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-custom">
+                                <i class="fas fa-sign-in-alt"></i> Login
+                            </button>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="signup">
+                        <h1>Signup</h1>
+                        <form>
+                            <div class="form-group">
+                                <label for="signup-name">Full Name</label>
+                                <input type="text" class="form-control" id="signup-name" placeholder="Enter Full Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signup-email">Email</label>
+                                <input type="email" class="form-control" id="signup-email" placeholder="Enter Email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signup-phone">Phone Number</label>
+                                <input type="tel" class="form-control" id="signup-phone" placeholder="Enter Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="signup-password">Password</label>
+                                <input type="password" class="form-control" id="signup-password" placeholder="Create Password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-custom">
+                                <i class="fas fa-user-plus"></i> Signup
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-container">
+            <img src="image.jpg" width="350px" style="border-bottom-left-radius: 20px;border-bottom-right-radius: 20px;"/>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="signupp.js"></script>
+</body>
+</html>
